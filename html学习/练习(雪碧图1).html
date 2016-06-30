@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            font-size: 13px;
+        }
+        .container
+        {
+            padding:10px;
+            margin: 100px auto;
+            width: 192px;
+            background-color: aliceblue;
+            border: 1px solid gainsboro;
+        }
+
+        /*账号密码输入框*/
+        .textField-container
+        {
+            display: flex;flex-direction: column;justify-content: space-between;
+        }
+        .textField
+        {
+            padding: 10px 30px;
+            margin-bottom: 10px;
+            border: 1px solid gainsboro;
+            border-radius: 3px;
+        }
+
+        /*记住密码和找回密码*/
+        .forget-save-password-container
+        {
+            margin-bottom: 10px;display: flex;justify-content: space-between;
+        }
+
+        .forget-password
+        {
+            color: blue;
+        }
+
+        /*登录按钮*/
+        .login
+        {
+            height: 38px;
+            background: url("src/sp.png");
+            background-repeat: no-repeat;
+            margin-bottom: 10px;
+
+        }
+
+        /*注册按钮*/
+        .register
+        {
+            height: 38px;
+            background: url("src/sp.png");
+            background-position: 0px -38px;
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!--账号密码输入框-->
+    <div class="textField-container">
+        <input class="textField" placeholder="请输入手机号码">
+        <input class="textField" placeholder="请输入密码">
+    </div>
+    <!--记住密码和找回密码-->
+    <div  class="forget-save-password-container">
+        <div>
+            <input type="checkbox"><label>下次自动登录</label>
+        </div>
+        <div class="forget-password">忘记密码?</div>
+    </div>
+    <!--登录-->
+    <div class="login"></div>
+    <!--注册-->
+    <div class="register"></div>
+</div>
+
+</body>
+</html>

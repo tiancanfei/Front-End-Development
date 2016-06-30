@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="css基础样式.css">
+    <script>
+        function chat(){
+            var startIcon = document.getElementById("chat-start");
+            var endIcon =  document.getElementById("chat-end");
+            var height = endIcon.offsetTop - startIcon.offsetTop;
+            console.log(startIcon.offsetHeight);
+            console.log(height);
+            document.getElementById("chat-date-line").offsetHeight = height;
+        };
+    </script>
+</head>
+<body onload="chat()" reload="chat()">
+<!--浮动-->
+<h2>浮动</h2>
+<form>
+    <fieldset id="form-container">
+        <legend>登陆页</legend>
+        <div class="iphone-password-container">
+            <div class="iphone-password-title">手机号</div>
+            <input class="iphone-password-input" type="text" placeholder="请输入手机号码">
+        </div>
+        <div class="iphone-password-container">
+            <div class="iphone-password-title">密码</div>
+            <input class="iphone-password-input" type="text" placeholder="请输入密码">
+        </div>
+        <fieldset id="note-container">
+            <legend>备注</legend>
+            <textarea class="note-input"></textarea>
+        </fieldset>
+        <input class="loginButton" type="submit" value="登录 ">
+    </fieldset>
+</form>
+<!--相对定位-->
+<h2>相对定位</h2>
+<div>
+    <div id="box1">box1</div>
+    <div id="box2">box2</div>
+    <div id="box3">box3</div>
+</div>
+<!--绝对定位-->
+<h2>绝对定位及气泡</h2>
+<div class="chat-container">
+    <div id="chat-date-line"></div>
+    <div class="chat-content">
+        <div class="chat-cell" id="chat-start">
+            <img class="chat-cell-dateLine-icon" src="" alt="">
+            <div class="bubble">
+                <div class="bubble-content">的发呆看父母都没法看到美美的看法目的是开发吗是贷款买房看到上面放孔明灯咖啡吗开门放孔明灯咖啡没看到</div>
+            </div>
+        </div>
+        <div class="chat-cell">
+            <img class="chat-cell-dateLine-icon" src="" alt="">
+            <div class="bubble">
+                <div class="bubble-content">的发呆看父母都没法看到美美的看法目的是开发吗是贷款买房看到上面放孔明灯咖啡吗开门放孔明灯咖啡没看到</div>
+            </div>
+        </div>
+        <div class="chat-cell">
+            <img class="chat-cell-dateLine-icon" src="" alt="">
+            <div class="bubble">
+                <div class="bubble-content">的发呆看父母都没法看到美美的看法目的是开发吗是贷款买房看到上面放孔明灯咖啡吗开门放孔明灯咖啡没看到</div>
+            </div>
+        </div>
+        <div class="chat-cell">
+            <img class="chat-cell-dateLine-icon" src="" alt="">
+            <div class="bubble">
+                <div class="bubble-content">的发呆看父母都没法看到美美的看法目的是开发吗是贷款买房看到上面放孔明灯咖啡吗开门放孔明灯咖啡没看到</div>
+            </div>
+        </div>
+        <div class="chat-cell" id="chat-end">
+            <img class="chat-cell-dateLine-icon" src="" alt="">
+            <div class="bubble">
+                    <div class="bubble-content">的发呆看父母都没法看到美美的看法目的是开发吗是贷款买房看到上面放孔明灯咖啡吗开门放孔明灯咖啡没看到</div>
+                </div>
+        </div>
+    </div>
+</div>
+<!--导航栏-->
+
+<ul class="nav">
+    <li><a href="">首页</a></li>
+    <li><a href="">关于</a></li>
+    <li><a href="">证券投资组合</a></li>
+    <li><a href="">博客</a></li>
+    <li><a href="">资源</a></li>
+    <li><a href="">资源</a></li>
+</ul>
+
+</body>
+</html>

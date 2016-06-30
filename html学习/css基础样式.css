@@ -1,0 +1,318 @@
+/*
+1.浮动定位 float(标准文档流)
+     left(向左浮动)
+     right(向右浮动)
+     浮动会影响到后面的元素,当然也可能影响到其他元素,如果浮动对其他元素产生了不必要的影响,需要清除浮动
+     清除浮动:
+           清除父标签的浮动:{width:100%;overflow:hidden}
+           清除非父标签的浮动{clear:both}
+2.position定位
+     相对定义:
+            相对于自身原有位置定位
+            仍然处在标准文档流中
+            设置了相对定位的元素拥有偏移属性(left,right,top,bottom)和z-index(元素层级)属性
+     绝对定位:
+            脱离标准文档流
+            设置了绝对定位的元素拥有偏移属性(left,right,top,bottom)和z-index(元素层级)属性
+            设置了绝对定位的元素的的宽度将不再默认扩展到整个屏幕,而是根据其内容自动扩展
+            设置了绝对定位的元素会选择离自身最近的已定位(设置了position)祖先元素作为参照(以参照元素的最左上点为坐标原点)
+            如果祖先元素都没有设置position定位,那么绝对定位元素将以根标签作为参照(以浏览器的最左上点作为坐标原点)
+            在设置祖先元素定位的时候通常设置祖先position:relative
+3.关于z-index:
+     只有当position设置了非static的时候元素才能拥有偏移属性(left,right,top,bottom)和z-index(元素层级)属性
+     默认值为auto堆叠顺序与父元素相等
+     非auto的z-index祖先优先原则,由最祖先的元素决定
+     auto表示当前层叠上下文产生的盒子层叠水平为0,盒子(除非是跟元素)不会创建一个新的层叠上下文.
+4.文本样式处理
+//文本默认是直接超出在控件,而且默认超出范围自动换行的,这样永远不会出现超出范围的
+//将超出控件的文本显示成省略号
+text-overflow:ellipsis;
+//超出控件部分隐藏,
+overflow:hidden;
+//不能换行
+white-space:nowrap;
+//段落第一行缩略
+text-indent:-9999px;
+5.css的颜色
+     透明:transparent
+     渐变色:渐变颜色至少指定两个以上
+         线性变化:linear-gradient(角度,...,按顺序的渐变色,...)
+         径向渐变:radial-gradient(...,渐变色,...)  从内向外像年轮一样
+6.边框
+   border: 10px blue solid;
+7.伪选择器
+用":"跟在其他选择器的后面,用content字段表示需要添加的标签的内容(闭合标签尖括号之间的内容),其他css属性随便使用,可以直接当成一个div标签
+before:在选择器对应的dom之前
+after:在选择器对应的dom之后
+empty:表示在选则器对应的元素,没有任何内容,是一个空标签
+锚伪类(链接的不同状态都的不同显示方式 顺序是必须的love hate)
+a:link {color: #FF0000}		// 未访问的链接
+a:visited {color: #00FF00}	//已访问的链接
+a:hover {color: #FF00FF}	//鼠标移动到链接上
+a:active {color: #0000FF}	//选定的链接
+
+
+8.背景
+   background:blue no-repeat right/50px 50px linear-gradient(90deg, red,black);
+
+9. 选择器
+    1)元素选择器:用标签名筛选元素
+    2)选择器分组:标签选择器,用逗号隔开 h1,h2
+    3)ID选择器:通过id筛选元素 #container
+    4)属性选择器:用标签属性筛选元素 .content[title]  [title]
+    5)类选择器:用标签class筛选元素 .content
+    6)后代选择器:从标签子孙(包括儿子元素)元素中筛选元素 .container > .content
+    7)子选择器:从标签儿子元素中筛选元素 .container > .content
+10.所有的css描述,都是顺时针的,边框上右下左,角左上右上右下左下
+11.阴影
+   背景阴影:
+       box-shadow: x偏移 y偏移 [模糊半径] [模糊半径扩展] [阴影颜色] [投影方式:内投影(inset),外投影(默认)];
+       一般使用box-shadow: x偏移 y偏移 模糊半径 阴影颜色
+       其中偏移的值可以是负数
+       box-shadow: 0px 0px 6px red;
+       box-shadow: 0px 0px 0px 10px black inset
+   字体阴影:规则跟背景阴影一致
+       text-shadow:
+12.服务器字体引用(用户可以使用本地系统没有的字体)
+@font-face {
+    font-family : 字体名称;
+    src : 字体文件在服务器上的相对或绝对路径;
+}
+
+.demo{
+   font-family:"字体名称"
+}
+13. 简单帧动画
+定义动画
+@keyframes 自定义动画名称  {
+   0%   {background: red;}
+   25%  {background: yellow;}
+   50%  {background: blue;}
+   100% {background: green;}
+   动画执行百分比 {要改变的元素属性}
+}
+元素添加动画
+div {
+   animation: 要添加的动画名称 动画执行时间 动画的执行函数(eg:linear) 动画延时时间 动画播放次数
+}
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#form-container
+{
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+}
+
+@keyframes myAnimation  {
+
+}
+
+.iphone-password-title
+{
+    float: left;
+    height: 100%;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+.iphone-password-input
+{
+    float: right;
+    width: 70%;
+    height: 100%;
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    padding: 0px 10px;
+}
+
+.iphone-password-container
+{
+    margin: 10px 0px;
+    height: 30px;
+    clear: both;
+}
+
+#note-container
+{
+    clear: both;
+    height: 100px;
+    margin: 10px 0px;
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+}
+
+.note-input
+{
+    width: 92%;
+    height:75%;
+    margin: 0px 10px;
+    border: 1px solid gainsboro;
+    border-top: hidden;
+    border-left: hidden;
+    border-right: hidden;
+}
+
+
+.loginButton
+{
+    height: 44px;
+    width:100%;
+    border: 1px solid gainsboro;
+    border-radius: 3px;
+}
+
+
+#box1
+{
+    height: 200px;
+    position: relative;
+    top: 100px;
+    background-color: green;
+}
+
+#box2
+{
+    height: 200px;
+    background-color: red;
+}
+
+#box3
+{
+    height: 200px;
+    background-color: blue;
+}
+
+/*聊天室*/
+.chat-container
+{
+    position: relative;
+    padding: 10px 0px;
+    background-color: antiquewhite;
+}
+
+#chat-date-line
+{
+    position: absolute;
+    left: 40px;
+    top: 0px;
+    width: 1px;
+    height: 200px;
+    background-color: aqua;
+}
+
+.chat-cell
+{
+    margin: 0px 10px 10px 0px;
+}
+
+.chat-cell-dateLine-icon
+{
+    display: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: red;
+    margin-top: 10px;/*10px + 0px + 10px - 10px*/
+    margin-left: 30px;
+    float: left;
+}
+
+#chat-start .chat-cell-dateLine-icon
+{
+    display: block;
+    position:absolute;
+}
+
+#chat-end .chat-cell-dateLine-icon
+{
+    display: block;
+    position:absolute;
+    background-position: 0px 24px;
+}
+
+/*气泡*/
+.bubble
+{
+    display: flex;
+    margin-left:50px;/*30px + 20px - 10px + 10px*/
+    padding: 0px;
+}
+
+.bubble-content
+{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.bubble:before
+{
+    content: "";
+    height: 0px;
+    width: 0px;
+    margin-top: 10px;
+    border: 10px solid;
+    border-color: transparent white transparent transparent;
+    line-height:0;
+    font-size:0;
+}
+
+
+
+/*导航栏*/
+
+.nav {
+    width:560px;
+    height: 50px;
+    background-color: red;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px auto;
+    padding: 0px 50px;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 6px #ba4a45;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: inherit;
+    padding: 17px 0px;
+    color: inherit;
+    transition: all .2s ease-in;
+}
+a:hover {
+    transform: rotate(10deg);
+}
+
+li {
+    position: relative;
+    padding: 17px 16px;
+    width: auto;
+}
+
+li:after {
+    content: "";
+    position: absolute;
+    margin: 15px 0px;
+    right: 0px;
+    height: 20px;
+    width: 1px;
+    background: linear-gradient(#ff625a, #9e3e3a 50%, #ff625a);
+}
+
+li:last-child:after {
+    background: none;
+}

@@ -1,0 +1,63 @@
+/*
+登录页
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#container
+{
+    margin: 20px;
+}
+
+#form-container
+{
+    padding: 10px;
+}
+
+#note-container
+{
+    display: flex;
+    padding: 10px;
+}
+
+fieldset
+{
+    border-radius: 3px;
+}
+
+.iphone-password-input-title
+{
+    height: 44px;
+    line-height: 44px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 10px 0px;
+}
+
+.iphone-password-input
+{
+    width: 80%;
+    border-radius: 5px;
+}
+
+.note-input
+{
+    height: 44px;
+    width: 100%;
+    text-align: center;
+}
+
+.loginButton
+{
+    width: 100%;
+    height: 44px;
+    border: solid 0.5px;
+    border-radius: 5px;
+    margin: 10px 0px;
+    padding: 0px 20px;
+}

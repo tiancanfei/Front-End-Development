@@ -1,0 +1,237 @@
+<!--表示文档的格式是html5-->
+<!DOCTYPE html>
+<html lang="en">
+<!--头部元素容器head-->
+<head>
+    <!--每一个meta源数据标签代表一个文档属性-->
+    <!--meta的content属性,与name(常用),http-equiv,scheme是成对出现的,类似与键值对-->
+    <!--content的值如果有多个,用逗号隔开-->
+    <!--文档编码-->
+    <meta charset="UTF-8">
+    <!--移动端viewport属性-->
+    <!--移动端viewport属性content包括
+        height:device-height或者直接px
+        width:device-width或者直接px
+        initial-scale:初始缩放
+        minimum-scale:最小缩放倍数一个浮点数
+        maximum-scale:最大缩放倍数一个浮点数
+        user-scalable:用户调整缩放yes/no(非0既真)默认yes如果设置为no忽略最大和最小缩放属性,禁止用户手动调整缩放
+        target-densitydpi:像素密度dpi
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+    <!--标题-->
+    <title>html常用标签</title>
+    <!--连接外部资源type:引入资源的类型 href:引入资源的地址css文件等等-->
+    <link rel="stylesheet" href="#">
+    <link rel="stylesheet" href="常用标签.css">
+</head>
+<body>
+<div id="container">
+    <!--字符串(文档)-->
+    <div>
+        <!--文本格式化
+   文字的粗体,斜体,着重线<strong>
+   定义插入字:<ins>
+   定义删除线:文本中划线<del>
+   定义下标文字:<sub>
+   定义上标文字:<sup>
+   预格式文本:一段文字的格式保持,通常用于计算机代码<pre>
+-->
+        <strong>加粗文字</strong>
+        <i>斜体文字</i>
+        <del>中划线</del>
+        <ins>下划线</ins>
+        <sub>上标文字</sub>
+        <sup>下标文字</sup>
+    <pre>
+        //预格式文本,适用于直接展示计算机啊代码
+        int main()
+        {
+            print("hello word!!!")
+            return 0;
+        }
+    </pre>
+    </div>
+    <!--图片-->
+    <div>
+        <!--图片展示
+<img>属性src:表示img的地址  alt:表示图片加载失败的时候img标签将不显示图片,而显示alt的值,通常使用alt="",在图片加载失败的时候直接不显示任何东西
+-->
+        <img src="http://easyread.ph.126.net/m01ZnaivFu8yR-lVjO62vg==/7917012585080905357.jpg" alt="">
+        <!--给图片添加超链接 通常做法就是用一个空的a标签包裹img-->
+        <a href="http://image.baidu.com/search/detail?ct=503316480&z=0&ipn=d&word=%E5%AE%A0%E7%89%A9&step_word=&pn=8&spn=0&di=38456342980&pi=&rn=1&tn=baiduimagedetail&is=&istype=2&ie=utf-8&oe=utf-8&in=&cl=2&lm=-1&st=-1&cs=1296702992%2C1090972040&os=1298939539%2C2286145865&simid=3413410218%2C77675183&adpicid=0&ln=1000&fr=&fmq=1463574658346_R&fm=result&ic=0&s=undefined&se=&sme=&tab=0&width=&height=&face=undefined&ist=&jit=&cg=&bdtype=0&oriquery=&objurl=http%3A%2F%2Feasyread.ph.126.net%2Fm01ZnaivFu8yR-lVjO62vg%3D%3D%2F7917012585080905357.jpg&fromurl=ippr_z2C%24qAzdH3FAzdH3F3_z%26e3Bgjof_z%26e3B8mn_z%26e3Bv54AzdH3F15vfAzdH3F8mAzdH3Fda8candc8dAzdH3FALIcRDBclaa8RDBm_z%26e3Bip4s&gsm=0&rpstart=0&rpnum=0">
+            <img src="http://easyread.ph.126.net/m01ZnaivFu8yR-lVjO62vg==/7917012585080905357.jpg" alt="">
+        </a>
+        <br>
+        <a href="http://www.w3school.com.cn/tags/tag_area.asp">img的点击区域设置</a>
+    </div>
+    <!--列表-->
+    <div>
+        <!--列表
+   有序列表:<ol>默认带有编号
+   无序列表:<ul>默认带黑点
+   列表当中的一级标签<li>
+-->
+        <div>
+            有序列表
+            <ul>
+                <li>客户端</li>
+                <li>服务端</li>
+                <li>产品设计</li>
+                <li>测试</li>
+                <li>运营管理</li>
+            </ul>
+        </div>
+        <div>
+            无序列表
+            <ol>
+                <li>客户端</li>
+                <li>服务端</li>
+                <li>产品设计</li>
+                <li>测试</li>
+                <li>运营管理</li>
+            </ol>
+        </div>
+    </div>
+    <!--表格-->
+    <div>
+        <!--表格
+   表格:<table>
+       属性:
+          border:边框
+          width:表格宽度
+          cellspacing:单元格外边距
+          cellpadding:单元格内边距
+
+   表格标题:<caption>
+   表头:<thead>
+   表脚:<tfooter>
+   表头单元格:<th>特殊的单元格
+       属性:
+           colspan:横向标题连续合并的单元格数
+           rowspan:纵向标题连续合并的单元格数
+   表格行:<tr>
+   单元格行以最多行定义
+   表格每一个单元格:<td>
+      属性:
+          单元格中的内容的对齐方式:align(left,right,center),单元格的垂直方向是默认居中的
+   单元格和表头通常包裹在表格行中,而且通常会在表头或者表脚用<thead>和<tfooter>包裹包裹着表头或者表脚的表格行<tr>
+-->
+        <!--横向表格-->
+        <table border="1" cellspacing="0px" cellpadding="" width="100%">
+            <!--表格标题-->
+            <caption>宠物店</caption>
+            <!--表头-->
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>头像</th>
+                <th>年纪</th>
+                <th>性别</th>
+                <th>毛色</th>
+            </tr>
+            </thead>
+            <!--表格内容-->
+            <tr>
+                <td>汪星人1号</td>
+                <td><img src="http://easyread.ph.126.net/m01ZnaivFu8yR-lVjO62vg==/7917012585080905357.jpg" alt=""></td>
+                <td>5岁</td>
+                <td>姑娘</td>
+                <td>红</td>
+            </tr>
+            <tr>
+                <td>汪星人2号</td>
+                <td><img src="http://easyread.ph.126.net/m01ZnaivFu8yR-lVjO62vg==/7917012585080905357.jpg" alt=""></td>
+                <td>5岁</td>
+                <td>小子</td>
+                <td>黄</td>
+            </tr>
+            <tr>
+                <td>汪星人3号</td>
+                <td><img src="http://easyread.ph.126.net/m01ZnaivFu8yR-lVjO62vg==/7917012585080905357.jpg" alt=""></td>
+                <td>5岁</td>
+                <td>小子</td>
+                <td>黄</td>
+            </tr>
+            <tfoot></tfoot>
+        </table>
+        <!--纵向表格-->
+        <table border="1" width="100%">
+            <caption>纵向表格演示</caption>
+            <tr>
+                <th>姓名</th>
+                <td>小飞</td>
+            </tr>
+            <tr>
+                <th rowspan="2">电话</th>
+                <td>1357833938</td>
+            </tr>
+            <tr>
+                <td>1357833338</td>
+            </tr>
+        </table>
+    </div>
+    <!--表单-->
+    <div>
+        <!--表单用于搜集用户的输入
+        表单区域:<form>(很少用到)
+        表单的输入标签:
+        <input>
+            属性:
+                type:用于表示输入标签的类型
+                     text表示普通的文本输入标签 placeholder:占位文字
+                     radio表示单选输入标签
+                     checkbox表示多选输入标签
+                     submit表示提交表单标签,按钮
+       <select>
+            下拉列表
+            属性:
+                name
+            子标签:
+                <option>
+                    属性:
+                        value:选项的值
+      <textarea>
+             文本输入区域
+             属性:
+                 row:行数
+                 cols:列数
+      <fieldset>
+            可以作为form表单的第一级标签在form外围添加一个带标题的框
+            子标签:
+            <legend>外框的标题
+        -->
+        <form>
+            <fieldset id="form-container">
+                <legend>登陆页</legend>
+                <div class="iphone-password-input-title">
+                    <div class="title">手机号</div>
+                    <input class="iphone-password-input" type="text" placeholder="请输入手机号码">
+                </div>
+                <div class="iphone-password-input-title">
+                    <div>密码</div>
+                    <input class="iphone-password-input" type="text" placeholder="请输入密码">
+                </div>
+                <fieldset id="note-container">
+                    <legend>备注</legend>
+                    <textarea class="note-input"></textarea>
+                </fieldset>
+                <input class="loginButton" type="submit" value="登录 ">
+            </fieldset>
+        </form>
+    </div>
+    <!--a标签-->
+    <!--
+    href:链接地址
+    text-decoration:下划线
+    a标签的尺寸直接width和height是没有用的,修改padding即可
+    -->
+    <div>
+        <h2>a标签</h2>
+        <a href="css基础样式.html">导航栏</a>
+    </div>
+
+</div>
+</body>
+</html>

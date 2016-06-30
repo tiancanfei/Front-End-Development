@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery样式修改</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script src="jquery-3.0.0.min.js"></script>
+    <script src="jquery样式修改.js"></script>
+</head>
+<body>
+<div id="setHeight" style="background-color: red;width: 100px;height: 10px;margin: 10px"></div>
+<label>高度</label><input id="div-height" style="width: 100px;height: 40px">
+<label>宽度</label><input id="div-width" style="width: 100px;height: 40px">
+<label>背景色</label><input id="div-background-color" style="width: 100px;height: 40px">
+<input type="button" value="获取css" onclick="getHeight()">
+<input type="button" value="设置高为100px" onclick="setHeight(100)">
+<input type="button" value="设置css" onclick="setCssAttr()">
+</body>
+</html>
